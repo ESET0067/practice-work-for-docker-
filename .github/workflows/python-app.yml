@@ -30,7 +30,9 @@ jobs:
 
         with:
 
-          images: ${{ vars.DOCKER_USER}}/my-image
+          images: ${{ vars.DOCKER_USER }}/helloworld1
+          tags: |
+            type=sha  # adds the latest commit SHA as a tag
  
       - name: Log in to Docker Hub
 
@@ -38,7 +40,7 @@ jobs:
 
         with:
 
-          username: ${{ vars.DOCKER_USER }}
+          username: ${{ vars.DOCKER_USER}}
 
           password: ${{ secrets.DOCKER_PASSWORD }}
  
